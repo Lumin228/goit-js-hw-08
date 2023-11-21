@@ -20,12 +20,12 @@ function formSubmit(evt) {
     evt.preventDefault();
 
     const textAreaMessage = localStorage.getItem(feedbackForm);
-    const data = JSON.parse(textAreaMessage) || {}; // Parse the stored JSON or use an empty object
+    const data = JSON.parse(textAreaMessage) || {}; 
     console.log(data);
 
     localStorage.clear();
-    textArea.value = ''; // Clear the textarea
-    formEmail.value = ''; // Clear the email input
+    textArea.value = ''; 
+    formEmail.value = ''; 
 }
 
 function reloadPage() {
