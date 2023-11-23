@@ -15,9 +15,11 @@ function playFunc(){
 
 player.on('timeupdate', throttle(playFunc, 1500));
 
-function playerFunc(){
-    const localStorageValue = localStorage.getItem(LOCAL_STORAGE_KEY);
-    player.setCurrentTime(localStorageValue)
-}
+function playerFunc() {
+    let localStorageValue = localStorage.getItem(LOCAL_STORAGE_KEY);
 
+    if (localStorageValue !== null) {
+        player.setCurrentTime(localStorageValue);
+    }
+}
 player.on('play', playerFunc)
